@@ -57,7 +57,7 @@ class _OnBoardingBodyScreenState extends State<OnBoardingBodyScreen> {
                           if (selectindex < onboardingdata.length - 1) {
                             selectindex++;
                             pageController.animateToPage(selectindex,
-                                duration: Duration(milliseconds: 1500),
+                                duration: Duration(milliseconds: 1000),
                                 curve: Curves.ease);
                           }
                         });
