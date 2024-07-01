@@ -3,7 +3,6 @@ import 'package:shopio_app/model/onboarding_model.dart';
 import 'package:shopio_app/routes/project_route.dart';
 import 'package:shopio_app/screens/onboarding/components/onboarding_comanscreen.dart';
 import 'package:shopio_app/screens/onboarding/components/indicator.dart';
-import 'package:shopio_app/screens/singin/signi_screen.dart';
 
 class OnBoardingBodyScreen extends StatefulWidget {
   const OnBoardingBodyScreen({super.key});
@@ -52,17 +51,13 @@ class _OnBoardingBodyScreenState extends State<OnBoardingBodyScreen> {
                     onBoardingContainer(selectindex),
                     FloatingActionButton(
                       backgroundColor: Colors.indigo,
-                      child: Icon(
-                        Icons.navigate_next,
-                        size: 40,
-                      ),
                       foregroundColor: Colors.white,
                       onPressed: () {
                         setState(() {
                           if (selectindex < onboardingdata.length - 1) {
                             selectindex++;
                             pageController.animateToPage(selectindex,
-                                duration: Duration(milliseconds: 1500),
+                                duration: const Duration(milliseconds: 1500),
                                 curve: Curves.fastLinearToSlowEaseIn);
                           } else {
                             Navigator.pushNamedAndRemoveUntil(
@@ -73,6 +68,10 @@ class _OnBoardingBodyScreenState extends State<OnBoardingBodyScreen> {
                           }
                         });
                       },
+                      child: const Icon(
+                        Icons.navigate_next,
+                        size: 40,
+                      ),
                     )
                   ],
                 ))
